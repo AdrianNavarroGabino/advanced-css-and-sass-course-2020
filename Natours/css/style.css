@@ -1,0 +1,36 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* El tamaño del contenedor incluye hasta el borde */
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7; /* La altura de la línea es 1.7 veces la altura de la fuente */
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh; /* El header ocupa el 95% del alto del viewport */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.7),
+        rgba(40, 180, 133, 0.7)),
+        url("../img/hero.jpg"); /* Imagen de fondo del contenedor con un degradado de color del primer color al segundo */
+    background-size: cover; /* Escala la imagen al mayor tamaño posible sin estirarla */
+    background-position: top; /* La imagen del fondo se muestra desde el principio hasta donde llegue */
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* Muestra el contenedor en forma de polígono definiendo los vértices */
+}
