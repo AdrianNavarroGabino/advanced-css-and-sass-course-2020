@@ -31,6 +31,50 @@ body {
         url("../img/hero.jpg"); /* Imagen de fondo del contenedor con un degradado de color del primer color al segundo */
     background-size: cover; /* Escala la imagen al mayor tamaño posible sin estirarla */
     background-position: top; /* La imagen del fondo se muestra desde el principio hasta donde llegue */
+    position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* Muestra el contenedor en forma de polígono definiendo los vértices */
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%; /* No ponemos el 50% porque el div padre no ocupa todo el viewport */
+    left: 50%; /* Estamos trasladando desde el vértice izdo-arriba, por lo que queda descentrado */
+    transform: translate(-50%, -50%); /* Trasladamos a la izda y arriba la mitad del ancho y del alto del div */
+    /*
+    Las tres primeras lineas cogen el vertice como punto de referencia en lugar
+    del centro del div, por lo que se descentra el div al darle una
+    posición absoluta y un porcentaje de posición.
+    Es por eso que hacemos translate con porcentajes, que toman
+    como medida el div
+    */
+}
+
+.heading-primary {
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 17.4px;
 }
