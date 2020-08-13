@@ -63,6 +63,8 @@ body {
 .heading-primary {
     color: #FFF;
     text-transform: uppercase;
+
+    backface-visibility: hidden; /* Se usa para evitar la sacudida en la animación */
 }
 
 .heading-primary-main {
@@ -70,6 +72,14 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    /* Hacer que el texto aparezca con un fade-in desde la izda y rebotando */
+    animation-name: moveInLeft; /* Nombre de la animación creada bajo */
+    animation-duration: 1s; /* Duración de la animación */
+    /*animation-delay: 3s; Cuánto tarda en empezar la animación */
+    /*animation-iteration-count: 3; Cuántas veces se repite la animación */
+    animation-timing-function: ease-out; /* Empieza rápido y acaba lento */
+    /*animation-timing-function: ease-in; Empieza lento y acaba rápido */
 }
 
 .heading-primary-sub {
@@ -77,4 +87,38 @@ body {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 17.4px;
+
+    animation: moveInRight 1s ease-out; /* Se puede juntar todo en una propiedad */
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
